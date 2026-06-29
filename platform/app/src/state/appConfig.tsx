@@ -7,7 +7,11 @@ const { Provider } = appConfigContext;
 export const useAppConfig = () => useContext(appConfigContext);
 
 export function AppConfigProvider({ children, value: initAppConfig }) {
+  console.log('initAppConfig', initAppConfig);
+
   const [appConfig, setAppConfig] = useState(initAppConfig);
+
+  console.log('appConfig', appConfig);
 
   return <Provider value={[appConfig, setAppConfig]}>{children}</Provider>;
 }
